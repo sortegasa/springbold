@@ -1,0 +1,1 @@
+No has proporcionado el contenido del archivo `lang.js`. Por favor, comparte el contenido de ese archivo para que pueda ayudarte a revisarlo y asegurarme de que cumple con los puntos que mencionaste.

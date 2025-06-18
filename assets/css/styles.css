@@ -1,0 +1,83 @@
+.hidden {
+  display: none !important;
+}
+
+/* Theme toggle icon visibility */
+#theme-toggle svg {
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+#sun-icon,
+#moon-icon {
+  display: none !important;
+}
+
+#sun-icon.active,
+#moon-icon.active {
+  display: block !important;
+}
+
+#theme-toggle:hover svg {
+  transform: scale(1.1);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, #dfe9f3 0%, transparent 70%);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(to bottom, #f5f9fb 0%, #ffffff 100%);
+}
+
+html.dark body {
+  background: linear-gradient(to bottom, #111111 0%, #1e1e1e 100%);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp ease 1.6s forwards;
+  animation-delay: 0.4s;
+}
+
+.logo svg {
+  height: 48px;
+  width: auto;
+  color: currentColor;
+  fill: currentColor;
+}
+
+html.dark #theme-toggle {
+  background-color: #1e1e1e;
+  color: #f9f9f9;
+  border-color: #444;
+}
