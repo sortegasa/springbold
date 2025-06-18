@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const htmlEl = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
   const langSelect = document.getElementById('lang-select');
-  const sunIcon = document.getElementById('sun-icon');
-  const moonIcon = document.getElementById('moon-icon');
+  const sunIcon = document.getElementById('light-icon');
+  const moonIcon = document.getElementById('dark-icon');
 
   function ensureIconsVisibility() {
     if (!sunIcon || !moonIcon) return;
     const isDark = htmlEl.classList.contains('dark');
-    sunIcon.style.display = isDark ? 'block' : 'none';
-    moonIcon.style.display = isDark ? 'none' : 'block';
+    sunIcon.style.display = isDark ? 'none' : 'block';
+    moonIcon.style.display = isDark ? 'block' : 'none';
   }
 
   function updateIcons() {

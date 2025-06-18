@@ -8,14 +8,20 @@
   transition: transform 0.3s ease;
 }
 
-#sun-icon,
-#moon-icon {
-  display: none !important;
+#theme-toggle svg.light-icon {
+  display: block;
 }
 
-#sun-icon.active,
-#moon-icon.active {
-  display: block !important;
+#theme-toggle svg.dark-icon {
+  display: none;
+}
+
+html.dark #theme-toggle svg.light-icon {
+  display: none;
+}
+
+html.dark #theme-toggle svg.dark-icon {
+  display: block;
 }
 
 #theme-toggle:hover svg {
