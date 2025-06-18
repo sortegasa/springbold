@@ -8,20 +8,13 @@
   transition: transform 0.3s ease;
 }
 
-#theme-toggle svg.light-icon {
-  display: block;
+
+html:not(.dark) .dark-icon {
+  display: none !important;
 }
 
-#theme-toggle svg.dark-icon {
-  display: none;
-}
-
-html.dark #theme-toggle svg.light-icon {
-  display: none;
-}
-
-html.dark #theme-toggle svg.dark-icon {
-  display: block;
+html.dark .light-icon {
+  display: none !important;
 }
 
 #theme-toggle:hover svg {
