@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     es: {
       title: "Una agencia de diseño estratégico e innovación digital.",
       paragraphs: [
-        "Creemos que el diseño es una herramienta de cambio — y la estrategia es el terreno donde crece.",
+        "Creemos que el diseño es una Creemos que el diseño es una herramienta de cambio, y que la estrategia es su base.",
         "Pensamos con claridad. Actuamos con intención. Perseguimos la calidad con disciplina, porque los detalles importan.",
-        "Somos pensadores pragmáticos y solucionadores racionales de problemas. Cuestionamos, simplificamos y refinamos hasta que las cosas tienen sentido — y funcionan. Pero por encima de todo, somos apasionados. Entusiastas. Amamos lo que hacemos. Y lo hacemos con alegría.",
+        "Somos pensadores pragmáticos y resolvemos problemas de forma racional. Cuestionamos, simplificamos y refinamos hasta que las cosas tienen sentido — y funcionan. Pero por encima de todo, somos apasionados. Entusiastas. Amamos lo que hacemos. Y lo hacemos dsfrutando.",
         "Diseñamos con precisión, y construimos con propósito. No seguimos tendencias — creamos claridad. Para marcas que están listas para avanzar — con la energía para crecer, y el coraje para destacar.",
         "Eso es lo que significa ser Springbold."
       ]
