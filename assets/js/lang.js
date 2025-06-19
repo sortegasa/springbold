@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     en: {
-      title: "A strategic design and digital innovation agency.",
+      title: "Strategic design and digital innovation agency.",
       subheading: "Spring is how we start. Bold is how we move.",
       paragraphs: [
         "We believe design is a tool for change — and strategy is the ground it grows from.",
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     },
     es: {
-      title: "Una agencia de diseño estratégico e innovación digital.",
+      title: "Agencia de diseño estratégico e innovación digital.",
       subheading: "Spring es cómo empezamos. Bold es cómo avanzamos.",
       paragraphs: [
         "Creemos que el diseño es una herramienta de cambio, y que la estrategia es su base.",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     },
     it: {
-      title: "Un'agenzia di design strategico e innovazione digitale.",
+      title: "Agenzia di design strategico e innovazione digitale.",
       subheading: "Spring è come iniziamo. Bold è come ci muoviamo.",
       paragraphs: [
         "Crediamo che il design sia uno strumento di cambiamento — e la strategia il terreno su cui cresce.",
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     },
     pt: {
-      title: "Uma agência de design estratégico e inovação digital.",
+      title: "Agência de design estratégico e inovação digital.",
       subheading: "Spring é como começamos. Bold é como nos movemos.",
       paragraphs: [
         "Acreditamos que o design é uma ferramenta de mudança — e a estratégia é o terreno onde ele cresce.",
