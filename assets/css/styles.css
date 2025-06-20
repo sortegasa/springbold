@@ -1,38 +1,22 @@
-.hidden {
-  display: none !important;
+:root {
+  --text-color: #18181b;
+  --text-color-secondary: #444547;
 }
 
-/* Theme toggle icon visibility */
-#theme-toggle svg {
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-}
-
-html:not(.dark) .dark-icon {
-  display: none !important;
-}
-
-html.dark .light-icon {
-  display: none !important;
-}
-
-#theme-toggle:hover svg {
-  transform: scale(1.1);
+html.dark {
+  --text-color: #d1d5db;
+  --text-color-secondary: #d1d5db;
 }
 
 html {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
 
-/* Fondo y colores modo light */
-body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, #dfe9f3 0%, transparent 70%);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: -1;
+.hidden {
+  display: none !important;
 }
 
 body {
@@ -41,122 +25,81 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background: linear-gradient(to bottom, #f5f9fb 0%, #ffffff 100%);
   transition: background 0.5s ease, color 0.5s ease;
-  color: var(--text-color);
+  color: #18181b;
 }
 
-:root {
-  --text-color: #1a1a1a;
-  --text-color-secondary: #4a4a4a;
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 140% 90% at 90% 10%, #dbeafe 0%, transparent 75%),
+    radial-gradient(ellipse 100% 55% at 10% 80%, #c7d2fe 0%, transparent 85%),
+    radial-gradient(ellipse 80% 30% at 30% 25%, #e0e7ff 0%, transparent 90%);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Fondo y colores modo dark */
-html.dark body {
-  background: radial-gradient(circle at 30% 30%, #222222 0%, #111111 100%);
-  /* background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23666666' fill-opacity='0.1'/%3E%3C/svg%3E"); */
-  background-repeat: no-repeat;
-  color: var(--text-color);
+/* --------- LOGO --------- */
+.logo svg, .logo img {
+  height: auto;
+  width: auto;
+  max-width: 100px;
 }
 
-html.dark {
-  --text-color: #d1d5db;
-  --text-color-secondary: #9ca3af;
+@media (min-width: 640px) {
+  .logo svg, .logo img { max-width: 110px; }
+}
+@media (min-width: 768px) {
+  .logo svg, .logo img { max-width: 130px; }
+}
+@media (min-width: 1024px) {
+  .logo svg, .logo img { max-width: 145px; }
 }
 
-/* Colores de texto modo dark */
-html.dark body,
-html.dark main,
-html.dark header,
-html.dark footer,
-html.dark h1,
-html.dark h2,
-html.dark p,
-html.dark a,
-html.dark li {
-  color: var(--text-color) !important;
+select,
+select:focus {
+  background-color: #fff;
+  color: #18181b;
+  border-color: #d1d5db;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-html.dark a {
-  color: #93c5fd;
-  transition: color 0.3s ease;
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-
-html.dark a:hover,
-html.dark a:focus {
-  color: #60a5fa;
-  outline: none;
+a:hover,
+a:focus {
+  color: #1d4ed8;
   text-decoration: underline;
+  outline: none;
 }
 
-/* Botón toggle modo dark */
-html.dark #theme-toggle {
-  background-color: #2a2a2a;
-  color: var(--text-color);
-  border-color: #555;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-  transition: background-color 0.3s ease, color 0.3s ease;
+#theme-toggle svg {
+  margin: 0 auto;
+  transition: transform 0.3s ease;
 }
+#theme-toggle:hover svg { transform: scale(1.1); }
 
-html.dark #theme-toggle:hover {
-  background-color: #3c3c3c;
-  color: #ffffff;
-}
-
-/* Quitar fondo en dark de bloques principales */
-html.dark main, 
-html.dark header, 
-html.dark footer {
-  background-color: transparent;
-}
-
-/* Sombra sutil para elementos destacados en modo dark */
-html.dark button,
-html.dark .card,
-html.dark header,
-html.dark main,
-html.dark footer {
-  box-shadow: none;
-  border-radius: 0;
-  transition: none;
-}
-
-html.dark button:hover,
-html.dark .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
-}
-
-/* Mejor visibilidad del logo en dark (opcional) */
-html.dark .logo svg {
-  filter: drop-shadow(0 0 2px rgba(255,255,255,0.7));
-}
-
-/* Tipografía */
+/* --------- TIPOGRAFÍA --------- */
 
 main h1 {
   font-size: 2rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-color);
-}
-
-html.dark main h1 {
-  color: var(--text-color);
   font-weight: 700;
-  letter-spacing: -0.015em;
 }
-
 main h2 {
-  font-size: 1.5rem;
-  line-height: 1.3;
+  font-size: 1.375rem;
+  line-height: 1.22;
   letter-spacing: 0.01em;
   color: var(--text-color-secondary);
   font-weight: 600;
 }
-
-html.dark main h2 {
-  color: var(--text-color-secondary);
-  font-weight: 600;
-}
-
 main p {
   font-size: 1.125rem;
   line-height: 1.65;
@@ -164,6 +107,117 @@ main p {
   color: var(--text-color-secondary);
 }
 
+@media (min-width: 640px) {
+  main h1 { font-size: 2.5rem; }
+  main h2 { font-size: 1.75rem; }
+  main p  { font-size: 1.25rem; }
+}
+@media (min-width: 768px) {
+  main h1 { font-size: 3.25rem; }
+  main h2 { font-size: 2.25rem; }
+  main p  { font-size: 1.4rem; }
+}
+@media (min-width: 1024px) {
+  main h1 { font-size: 4rem; }
+  main h2 { font-size: 2.5rem; }
+}
+@media (min-width: 1280px) {
+  main h1 { font-size: 5rem; }
+}
+
+/* --------- DARK MODE --------- */
+
+html.dark body {
+  background: radial-gradient(circle at 30% 30%, #23272f 0%, #18181b 100%);
+  color: #d1d5db;
+}
+
+html.dark body::before {
+  background: radial-gradient(circle at 30% 30%, #4b5563 0%, transparent 70%);
+  opacity: 0.25;
+}
+
+html:not(.dark) .dark-icon { display: none !important; }
+html.dark .light-icon { display: none !important; }
+
+html.dark main h1,
+html.dark main h2,
 html.dark main p {
-  color: var(--text-color-secondary);
+  color: var(--text-color);
+}
+
+html.dark a {
+  color: #60a5fa;
+}
+html.dark a:hover,
+html.dark a:focus {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* Botón toggle modo dark */
+html.dark #theme-toggle:hover {
+  background-color: #353b44;
+  color: #ffffff;
+}
+
+/* Mejor visibilidad del logo en dark */
+
+/* --------- Glow/Elevación suave para botones de idioma y modo --------- */
+#theme-toggle,
+#lang-select {
+  background-color: #fff;
+  color: #18181b;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  box-shadow: 0 0.5px 1.5px 0 rgba(59,130,246,0.012), 0 0.25px 0.75px 0 rgba(30,41,59,0.008);
+  transition: box-shadow 0.18s, background-color 0.18s, color 0.18s, border 0.18s;
+}
+
+#theme-toggle:focus,
+#theme-toggle:hover,
+#lang-select:focus,
+#lang-select:hover {
+  box-shadow: 0 1px 2px 0 rgba(59,130,246,0.013), 0 0.5px 1.2px 0 rgba(30,41,59,0.012);
+  outline: none;
+  transform: translateY(-0.5px) scale(1.004);
+}
+
+html.dark #theme-toggle,
+html.dark #lang-select {
+  background-color: #23272f;
+  color: #d1d5db;
+  border: 1px solid #555;
+  box-shadow: 0 1px 2px 0 rgba(59,130,246,0.02), 0 0.5px 1px 0 rgba(15,23,42,0.015);
+}
+
+html.dark #theme-toggle:focus,
+html.dark #theme-toggle:hover,
+html.dark #lang-select:focus,
+html.dark #lang-select:hover {
+  box-shadow: 0 2px 6px 0 rgba(59,130,246,0.025), 0 1.5px 4px 0 rgba(15,23,42,0.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+/* ACCESIBILIDAD: Desactiva animaciones si el usuario así lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
 }

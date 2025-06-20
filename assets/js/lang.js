@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     en: {
       title: "Strategic design and digital innovation agency.",
-      subheading: "Spring is how we start. Bold is how we move.",
+      subheading: "Purpose to grow. Boldness to move.",
       paragraphs: [
         "We believe design is a tool for change — and strategy is the ground it grows from.",
         "We think clearly. We act intentionally. We pursue quality with discipline, because details matter.",
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     es: {
       title: "Agencia de diseño estratégico e innovación digital.",
-      subheading: "Spring es cómo empezamos. Bold es cómo avanzamos.",
+      subheading: "Propósito para crecer. Valentía para avanzar.",
       paragraphs: [
         "Creemos que el diseño es una herramienta de cambio, y que la estrategia es su base.",
         "Pensamos con claridad. Actuamos con intención. Perseguimos la calidad con disciplina, porque los detalles importan.",
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     it: {
       title: "Agenzia di design strategico e innovazione digitale.",
-      subheading: "Spring è come iniziamo. Bold è come ci muoviamo.",
+      subheading: "Scopo per crescere. Coraggio per andare avanti.",
       paragraphs: [
         "Crediamo che il design sia uno strumento di cambiamento — e la strategia il terreno su cui cresce.",
         "Pensiamo con chiarezza. Agiamo con intenzione. Perseguiamo la qualità con disciplina, perché i dettagli contano.",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     pt: {
       title: "Agência de design estratégico e inovação digital.",
-      subheading: "Spring é como começamos. Bold é como nos movemos.",
+      subheading: "Propósito para crescer. Coragem para avançar.",
       paragraphs: [
         "Acreditamos que o design é uma ferramenta de mudança — e a estratégia é o terreno onde ele cresce.",
         "Pensamos com clareza. Agimos com intenção. Buscamos qualidade com disciplina, porque os detalhes importam.",
