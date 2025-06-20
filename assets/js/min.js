@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const sunIcon = document.getElementById('light-icon');
   const moonIcon = document.getElementById('dark-icon');
 
+  // Detectar idioma del navegador y ponerlo en el select (sólo si existe en el select)
+  const supportedLangs = ['en', 'es', 'it', 'pt'];
+  let browserLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2);
+  if (!supportedLangs.includes(browserLang)) browserLang = 'en';
+  if (langSelect) langSelect.value = browserLang;
+
   function ensureIconsVisibility() {
     if (!sunIcon || !moonIcon) return;
     const isDark = htmlEl.classList.contains('dark');
@@ -13,35 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateIcons() {
-    const isDark = htmlEl.classList.contains('dark');
     ensureIconsVisibility();
   }
 
-  // Aplicar tema por defecto o desde localStorage
-  const storedTheme = localStorage.getItem('theme');
-  if (!storedTheme) {
-    const hour = new Date().getHours();
-    const defaultTheme = hour >= 7 && hour < 19 ? 'light' : 'dark';
-    htmlEl.classList.toggle('dark', defaultTheme === 'dark');
-    localStorage.setItem('theme', defaultTheme);
-  } else {
-    htmlEl.classList.toggle('dark', storedTheme === 'dark');
-  }
-
+  // Siempre aplicar tema por horario (no se guarda preferencia)
+  const hour = new Date().getHours();
+  const defaultTheme = hour >= 7 && hour < 19 ? 'light' : 'dark';
+  htmlEl.classList.toggle('dark', defaultTheme === 'dark');
   updateIcons();
 
   themeToggle?.addEventListener('click', () => {
     const isDark = htmlEl.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
     updateIcons();
   });
 
   langSelect?.addEventListener('change', () => {
-    const selected = langSelect.value;
-    localStorage.setItem('lang', selected);
     location.reload();
   });
-
-  const storedLang = localStorage.getItem('lang');
-  if (storedLang) langSelect.value = storedLang;
 });

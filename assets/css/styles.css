@@ -213,7 +213,7 @@ html.dark #lang-select:hover {
   animation: fadeIn 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-/* ACCESIBILIDAD: Desactiva animaciones si el usuario así lo prefiere */
+/* ACCESIBILIDAD: Desactiva animaciones si el usuario lo decide */
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
     animation-duration: 0.01s !important;
