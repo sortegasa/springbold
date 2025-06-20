@@ -7,6 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const storedTheme = localStorage.getItem("theme");
   const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  const themeExpiryKey = "theme-timestamp";
+  const storedTimestamp = localStorage.getItem(themeExpiryKey);
+  const now = Date.now();
+
+  // Si hay tema almacenado pero han pasado más de 24h, se elimina
+  if (storedTimestamp && now - parseInt(storedTimestamp, 10) > 24 * 60 * 60 * 1000) {
+    localStorage.removeItem("theme");
+    localStorage.removeItem(themeExpiryKey);
+  }
+
   const setTheme = (theme) => {
     if (theme === "dark") {
       htmlEl.classList.add("dark");
@@ -19,13 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (darkIcon) darkIcon.classList.add("hidden");
       themeToggle?.setAttribute("aria-pressed", "false");
     }
-    localStorage.setItem("theme", theme);
   };
 
-  setTheme(storedTheme || (systemPrefersDark ? "dark" : "light"));
+  const hour = new Date().getHours();
+  const defaultTheme = hour >= 7 && hour < 19 ? "light" : "dark";
+  setTheme(storedTheme || defaultTheme);
 
   themeToggle?.addEventListener("click", () => {
     const isDark = htmlEl.classList.contains("dark");
-    setTheme(isDark ? "light" : "dark");
+    const newTheme = isDark ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    localStorage.setItem(themeExpiryKey, Date.now().toString());
   });
 });

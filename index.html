@@ -13,6 +13,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script>
+    const hour = new Date().getHours();
+    const defaultTheme = hour >= 7 && hour < 19 ? 'light' : 'dark';
+    document.documentElement.classList[defaultTheme === 'dark' ? 'add' : 'remove']('dark');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Siempre aplicar tema por horario (no se guarda preferencia)
   const hour = new Date().getHours();
   const defaultTheme = hour >= 7 && hour < 19 ? 'light' : 'dark';
-  htmlEl.classList.toggle('dark', defaultTheme === 'dark');
+  htmlEl.classList[defaultTheme === 'dark' ? 'add' : 'remove']('dark');
   updateIcons();
 
   themeToggle?.addEventListener('click', () => {
